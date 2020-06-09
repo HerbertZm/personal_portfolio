@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio_app',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -137,6 +139,14 @@ DATABASES['default'].update(db_from_env)
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# cloudinary for file storage
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'htdhlctux',
+    'API_KEY': '517146859461251',
+    'API_SECRET': 'nJgMIbpK4V1VUGom1kmqhS0Ur3Y',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
